@@ -1,0 +1,70 @@
+$name: "Deathmatch Spawn"
+$desc: "is death"
+
+body:
+{
+	type: static
+
+	@shape.box:
+	{
+		layer: entity, building
+		mask: world
+
+		size: [6.000, 6.000]
+		offset: [0.000, 0.000]
+
+		elasticity: 0.50
+		friction: 0.50
+
+		material: stone
+	}
+}
+
+sprite.renderer:
+{
+	texture: "spawn.dm"
+	mask: "spawn.dm.mask"
+	z: -100
+}
+
+faction.colorable:
+{
+	
+}
+
+transform:
+{
+	
+}
+
+nameable:
+{
+	name: "DM Spawn"
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+claimer:
+{
+	radius: 64.000
+	strength: 50.000
+	falloff: 1.000
+}
+
+spawn:
+{
+	flags: faction
+	loadouts:
+	[
+		{
+			name: "Human"
+			description: "TODO: Desc"
+			flags: human
+			prefab: "human"
+			cost: 0.00
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.1.33.0",
+  "guid": "35e97624-9c74-4849-9ac9-cd85428b1a96",
+  "identifier": "TC2.Deathmatch",
+  "name": "Deathmatch",
+  "description": "A deathmatch experiment.",
+  "url": "https://github.com/TFlippy/TC2.Deathmatch",
+  "git": "https://github.com/TFlippy/TC2.Deathmatch.git",
+  "authors": [
+    "TFlippy"
+  ],
+  "dependencies": [
+    {
+      "identifier": "TC2.Core",
+      "required": true
+    },
+    {
+      "identifier": "TC2.Base",
+      "required": true
+    }
+  ]
+}
