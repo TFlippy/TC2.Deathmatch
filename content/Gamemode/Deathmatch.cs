@@ -31,10 +31,10 @@
 
 				Constants.World.enable_autosave = false;
 
-				Constants.Respawn.token_count_min = 0.50f;
-				Constants.Respawn.token_count_max = 10.00f;
+				Constants.Respawn.token_count_min = 1.00f;
+				Constants.Respawn.token_count_max = 20.00f;
 				Constants.Respawn.token_count_default = 3.00f;
-				Constants.Respawn.token_refill_amount = 0.00f;
+				Constants.Respawn.token_refill_amount = 0.05f;
 
 				Constants.Respawn.respawn_cooldown_base = 5.00f;
 				Constants.Respawn.respawn_cooldown_token_modifier = 0.00f;
@@ -94,11 +94,26 @@
 						score_killer.Sync(ent_killer);
 					}
 
+					var reward_tokens = 0.00f;
+
+					ref var respawn_victim = ref ent_victim.GetComponent<Respawn.Data>();
+					if (!respawn_victim.IsNull())
+					{
+						reward_tokens += respawn_victim.tokens * 0.25f;
+
+						respawn_victim.SetTokens(respawn_victim.tokens - reward_tokens);
+						respawn_victim.Sync(ent_victim);
+
+						Notification.Push(in player, $"Lost {reward_tokens:0.00} tokens for dying.", 0xffff0000, 3.00f);
+					}
+
 					ref var respawn_killer = ref ent_killer.GetComponent<Respawn.Data>();
 					if (!respawn_killer.IsNull())
 					{
-						respawn_killer.SetTokens(respawn_killer.tokens + 2.00f);
+						respawn_killer.SetTokens(respawn_killer.tokens + reward_tokens + 0.50f);
 						respawn_killer.Sync(ent_killer);
+
+						Notification.Push(in player_killer, $"Received {reward_tokens:0.00} tokens for killing an enemy.", 0xff00ff00, 3.00f);
 					}
 				}
 			}

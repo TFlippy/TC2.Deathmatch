@@ -209,15 +209,15 @@ entities:
 		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "wreck.chain_fence.00"
-		position: [173.625, 26.250]
-		rotation: 0.000
-		scale: [-1.000, 1.000]
+		prefab: "lamp"
+		position: [224.625, 24.000]
+		rotation: 0.0174533
+		scale: [1.000, 1.000]
 	}
 	{
 		prefab: "wreck.trashcan"
 		position: [192.9500275, 52.9485931]
-		rotation: -0.0907323
+		rotation: -0.090732
 		scale: [1.000, 1.000]
 	}
 	{
@@ -401,7 +401,7 @@ entities:
 	{
 		prefab: "wreck.trashcan"
 		position: [207.0499725, 52.9485931]
-		rotation: 0.0907157
+		rotation: 0.0907152
 		scale: [-1.000, 1.000]
 	}
 	{
@@ -812,6 +812,78 @@ entities:
 		prefab: "shrubbery"
 		position: [304.125, 50.750]
 		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [166.750, 32.750]
+		rotation: 0.000
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [155.500, 41.875]
+		rotation: 0.000
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp_post.metal"
+		position: [154.500, 34.500]
+		rotation: 0.000
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [233.250, 32.750]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "lamp_post.metal"
+		position: [245.500, 34.500]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [244.500, 41.875]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "wreck.chain_fence.00"
+		position: [173.125, 26.375]
+		rotation: -0.0349066
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [175.250, 24.000]
+		rotation: -0.0174533
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [170.875, 45.375]
+		rotation: -3.4732056
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [229.125, 45.375]
+		rotation: 3.4732056
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [144.375, 49.375]
+		rotation: -3.0368731
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "lamp"
+		position: [255.625, 49.375]
+		rotation: 3.0368731
 		scale: [-1.000, 1.000]
 	}
 ]
