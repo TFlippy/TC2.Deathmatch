@@ -77,16 +77,16 @@ entities:
 		scale: [-1.1166656, 0.9555555]
 	}
 	{
-		prefab: "tree.pine"
-		position: [248.375, 38.500]
-		rotation: 0.0872665
-		scale: [1.050, 0.9888889]
+		prefab: "ladder.metal"
+		position: [162.000, 36.875]
+		rotation: 0.000
+		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "tree.pine"
-		position: [151.375, 38.750]
-		rotation: -0.0349066
-		scale: [1.0277786, 0.9611111]
+		prefab: "ladder.metal"
+		position: [156.000, 34.125]
+		rotation: 0.000
+		scale: [1.000, 1.000]
 	}
 	{
 		prefab: "tree.pine"
@@ -191,8 +191,8 @@ entities:
 		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "wreck.crates.00"
-		position: [184.500, 48.500]
+		prefab: "ladder.wood"
+		position: [155.500, 45.875]
 		rotation: 0.000
 		scale: [1.000, 1.000]
 	}
@@ -216,14 +216,8 @@ entities:
 	}
 	{
 		prefab: "wreck.trashcan"
-		position: [179.3050232, 48.8843803]
-		rotation: -1.5451552
-		scale: [1.000, 1.000]
-	}
-	{
-		prefab: "wreck.trashcan"
 		position: [192.9500275, 52.9485931]
-		rotation: -0.0907317
+		rotation: -0.0907323
 		scale: [1.000, 1.000]
 	}
 	{
@@ -365,10 +359,10 @@ entities:
 		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "wreck.crates.00"
-		position: [215.500, 48.375]
+		prefab: "ladder.metal"
+		position: [162.000, 42.500]
 		rotation: 0.000
-		scale: [-1.000, 1.000]
+		scale: [1.000, 1.000]
 	}
 	{
 		prefab: "wreck.chain_fence.00"
@@ -405,10 +399,10 @@ entities:
 		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "boulder.00"
-		position: [236.750, 53.750]
-		rotation: -0.1047198
-		scale: [1.000, 1.000]
+		prefab: "wreck.trashcan"
+		position: [207.0499725, 52.9485931]
+		rotation: 0.0907157
+		scale: [-1.000, 1.000]
 	}
 	{
 		prefab: "wreck.chain_fence.00"
@@ -453,9 +447,9 @@ entities:
 		scale: [-1.000, 1.000]
 	}
 	{
-		prefab: "boulder.00"
-		position: [290.500, 50.000]
-		rotation: 0.000
+		prefab: "hatch.metal"
+		position: [244.500, 49.500]
+		rotation: -0.000
 		scale: [-1.000, 1.000]
 	}
 	{
@@ -477,14 +471,18 @@ entities:
 		scale: [1.000, 1.000]
 	}
 	{
-		prefab: "mount.heavy"
-		position: [75.750, 47.875]
+		prefab: "spawn.dm"
+		name: "Bunker"
+		faction_id: 2
+		position: [230.000, 36.250]
 		rotation: 0.000
-		scale: [1.000, 1.000]
+		scale: [-1.000, 1.000]
 	}
 	{
-		prefab: "mount.heavy"
-		position: [324.250, 47.875]
+		prefab: "spawn.dm"
+		name: "Bunker"
+		faction_id: 1
+		position: [170.000, 36.125]
 		rotation: 0.000
 		scale: [1.000, 1.000]
 	}
@@ -751,5 +749,69 @@ entities:
 		position: [220.625, 40.375]
 		rotation: 0.000
 		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "hatch.metal"
+		name: "Blue"
+		faction_id: 1
+		position: [155.500, 49.500]
+		rotation: 0.000
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "door.metal"
+		name: "Blue"
+		faction_id: 1
+		position: [158.750, 35.750]
+		rotation: 0.000
+		scale: [1.000, 1.000]
+	}
+	{
+		prefab: "boulder.00"
+		position: [238.375, 53.250]
+		rotation: -0.0523599
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "ladder.wood"
+		position: [244.500, 45.875]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "ladder.metal"
+		position: [238.000, 42.500]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "ladder.metal"
+		position: [238.000, 36.875]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "door.metal"
+		position: [241.250, 35.750]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "ladder.metal"
+		position: [244.000, 34.125]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "boulder.00"
+		position: [290.375, 50.250]
+		rotation: 0.0698132
+		scale: [-1.000, 1.000]
+	}
+	{
+		prefab: "shrubbery"
+		position: [304.125, 50.750]
+		rotation: -0.000
+		scale: [-1.000, 1.000]
 	}
 ]
