@@ -20,11 +20,15 @@ body:
 	}
 }
 
-sprite.renderer:
+animated.renderer:
 {
-	texture: "spawn.dm"
+	sprite:
+	{
+		texture: "spawn.dm"
+	}
+
+	z: -100.000
 	mask: "spawn.dm.mask"
-	z: -100
 }
 
 faction.colorable:

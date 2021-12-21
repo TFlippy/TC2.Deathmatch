@@ -21,10 +21,14 @@ health:
 	max: 2000.000
 }
 
-sprite.renderer:
+animated.renderer:
 {
+	sprite:
+	{
+		texture: "supply_crate"
+	}
+
 	z: -150.000
-	texture: "supply_crate"
 	mask: "supply_crate.mask"
 }
 

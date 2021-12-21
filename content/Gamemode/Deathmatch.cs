@@ -110,7 +110,7 @@
 					ref var respawn_killer = ref ent_killer.GetComponent<Respawn.Data>();
 					if (!respawn_killer.IsNull())
 					{
-						respawn_killer.SetTokens(respawn_killer.tokens + reward_tokens + 0.50f);
+						respawn_killer.SetTokens(respawn_killer.tokens + reward_tokens + 1.00f);
 						respawn_killer.Sync(ent_killer);
 
 						Notification.Push(in player_killer, $"Received {reward_tokens:0.00} tokens for killing an enemy.", 0xff00ff00, 3.00f);
