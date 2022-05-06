@@ -20,14 +20,14 @@
 
 			ref var region = ref info.GetRegion();
 
-			using (var defer = region.Defer())
-			{
-				ref var score = ref entity.GetOrAddComponent<Score.Data>(defer);
-				if (!score.IsNull())
-				{
-					//App.WriteLine($"deaths: {score.deaths}");
-				}
-			}
+			//using (var defer = region.Defer())
+			//{
+			//	ref var score = ref entity.GetOrAddComponent<Score.Data>(defer);
+			//	if (!score.IsNull())
+			//	{
+			//		//App.WriteLine($"deaths: {score.deaths}");
+			//	}
+			//}
 		}
 #endif
 	}

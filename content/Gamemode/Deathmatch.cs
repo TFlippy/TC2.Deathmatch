@@ -11,7 +11,12 @@
 			public float match_duration = 60.00f * 30.00f;
 
 			[Save.Ignore]
-			public float elapsed;
+			public float elapsed = default;
+
+			public Gamemode()
+			{
+
+			}
 
 			public static void Configure()
 			{
@@ -58,9 +63,11 @@
 #if SERVER
 			private static void OnPlayerCreate(ref Region.Data region, ref Player.Data player)
 			{
-				Character.Create(ref region, "Soldier", prefab: "human", flags: Character.Flags.Human | Character.Flags.Military, origin: Character.Origin.Soldier, player_id: player.id, hair_frame: 5, beard_frame: 1);
-				Character.Create(ref region, "Engineer", prefab: "human", flags: Character.Flags.Human | Character.Flags.Engineering | Character.Flags.Military, origin: Character.Origin.Engineer, player_id: player.id, hair_frame: 2, beard_frame: 7);
-				Character.Create(ref region, "Medic", prefab: "human", flags: Character.Flags.Human | Character.Flags.Medical | Character.Flags.Military, origin: Character.Origin.Doctor, player_id: player.id, hair_frame: 10, beard_frame: 15);
+				ref var score = ref player.ent_player.GetOrAddComponent<Score.Data>();
+
+				Character.Create(ref region, "Soldier", prefab: "human", flags: Character.Flags.Human | Character.Flags.Military, origin: Character.Origin.Soldier, gender: Organic.Gender.Male, player_id: player.id, hair_frame: 5, beard_frame: 1);
+				Character.Create(ref region, "Engineer", prefab: "human", flags: Character.Flags.Human | Character.Flags.Engineering | Character.Flags.Military, origin: Character.Origin.Engineer, gender: Organic.Gender.Male, player_id: player.id, hair_frame: 2, beard_frame: 7);
+				Character.Create(ref region, "Medic", prefab: "human", flags: Character.Flags.Human | Character.Flags.Medical | Character.Flags.Military, origin: Character.Origin.Doctor, gender: Organic.Gender.Male, player_id: player.id, hair_frame: 10, beard_frame: 15);
 			}
 
 			private static void OnPlayerDie(ref Region.Data region, ref Player.Data player)
@@ -292,7 +299,7 @@
 							items =
 							{
 								[0] = Shipment.Item.Prefab("pump_shotgun"),
-								[1] = Shipment.Item.Resource("ammo_sg_buck", 32),
+								[1] = Shipment.Item.Resource("ammo_sg.buck", 32),
 							}
 						}
 					},
@@ -470,7 +477,7 @@
 				ref var player = ref connection.GetPlayer();
 
 				ref var faction = ref region.GetFaction(this.faction_id);
-				if (!faction.IsNull() && !player.IsNull() && !player.flags.HasFlag(Player.Flags.Alive))
+				if (!faction.IsNull() && !player.IsNull() && !player.flags.HasAny(Player.Flags.Alive))
 				{
 					player.SetFaction(ref faction);
 					App.WriteLine($"Set {player.id}'s faction to {faction.name}!", App.Color.Green);
@@ -487,7 +494,7 @@
 
 			public void Draw()
 			{
-				var alive = this.player.flags.HasFlag(Player.Flags.Alive);
+				var alive = this.player.flags.HasAny(Player.Flags.Alive);
 				//App.WriteLine(alive);
 
 				var window_pos = (GUI.CanvasSize * new Vector2(0.50f, 0.00f)) + new Vector2(100, 100);
@@ -553,7 +560,7 @@
 
 					GUI.Title(faction.name, size: 32, color: color);
 					GUI.OffsetLine(GUI.GetRemainingWidth() - 80);
-					if (GUI.DrawButton("Join", new Vector2(80, 32), enabled: faction.id != gui.player.faction_id && !player.flags.HasFlag(Player.Flags.Alive)))
+					if (GUI.DrawButton("Join", new Vector2(80, 32), enabled: faction.id != gui.player.faction_id && !player.flags.HasAny(Player.Flags.Alive)))
 					{
 						Spawn.RespawnGUI.ent_selected_spawn = default; // TODO: Hack
 
@@ -613,7 +620,7 @@
 
 											using (row.Column(2))
 											{
-												GUI.Text(player.flags.HasFlag(Player.Flags.Alive) ? "Alive" : "Dead");
+												GUI.Text(player.flags.HasAny(Player.Flags.Alive) ? "Alive" : "Dead");
 											}
 
 											ref var score = ref entity.GetComponent<Score.Data>();
@@ -713,7 +720,7 @@
 				Spawn.RespawnGUI.window_pivot = new Vector2(0, 0);
 
 				ref readonly var kb = ref Control.GetKeyboard();
-				if ((!player.flags.HasFlag(Player.Flags.Alive) && !player.flags.HasFlag(Player.Flags.Editor)) || kb.GetKey(Keyboard.Key.Tab))
+				if ((!player.flags.HasAny(Player.Flags.Alive) && !player.flags.HasAny(Player.Flags.Editor)) || kb.GetKey(Keyboard.Key.Tab))
 				{
 					var gui = new ScoreboardGUI()
 					{
